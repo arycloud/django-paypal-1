@@ -161,10 +161,10 @@ class PayPalPaymentsForm(forms.Form):
             return POSTBACK_ENDPOINT
 
     def render(self):
-        return format_html(u"""<form action="{0}" method="post">
+        return format_html(u"""<form action="{0}" method="post" target="_blank">
     {1}
-    <input type="image" src="{2}" border="0" name="submit" alt="Buy it Now" />
-</form>""", self.get_endpoint(), self.as_p(), self.get_image())
+    <input type="image" src="http://res.cloudinary.com/dmax5caqu/image/upload/v1520654976/paypal.png" border="0" name="submit" alt="Buy it Now" />
+</form>""", self.get_endpoint(), self.as_p())
 
     def sandbox(self):
         "Deprecated.  Use self.render() instead."
